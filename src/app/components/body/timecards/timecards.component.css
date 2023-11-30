@@ -1,0 +1,64 @@
+mat-card {
+  padding: 2.5%;
+  /* min-width: 600px; */
+  /* width:100% */
+}
+
+mat-card-header {
+  background: #3366CC;
+}
+
+mat-card-title {
+  font-weight: bold;
+  color: white;
+}
+
+.title-center {
+  display: flex;
+  justify-content: center; /* align horizontal */
+  align-items: center; /* align vertical */
+}
+
+@media screen and (min-width: 790px) {
+  .web-timecards-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: start;
+    column-gap: 10px;
+    min-width: 790px;
+  }
+}
+
+.web-timecards-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: start;
+  column-gap: 5px;
+}
+
+.web-timecards-item {
+  /* width: 100%; */
+  padding: 1%;
+}
+
+mat-label {
+  padding-right: 10px;
+  font-weight: bold;
+}
+
+mat-form-field {
+  width:210px;
+}
+
+.name {
+  width: 300px;
+}
+
+.submit-button {
+  display: flex;
+  justify-content: flex-end;
+}
+
+button {
+  margin: 10px;
+}

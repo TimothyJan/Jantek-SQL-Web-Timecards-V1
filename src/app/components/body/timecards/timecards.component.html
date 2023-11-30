@@ -1,0 +1,113 @@
+<mat-card>
+  <mat-card-header class="title-center">
+    <mat-card-title>Jantek Web Timecards</mat-card-title>
+  </mat-card-header>
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="web-timecards-container">
+      <!-- Type -->
+      <div class="web-timecards-item">
+        <mat-label>Type:</mat-label>
+        <br>
+        <mat-form-field>
+          <mat-select formControlName="type">
+            <mat-option value="Hours">Hours</mat-option>
+            <mat-option value="Earns/Deductions">Earns/Deductions</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="web-timecards-container">
+      <!-- Employee -->
+      <div class="web-timecards-item">
+        <mat-label>Employee:</mat-label>
+        <br>
+        <mat-form-field>
+          <input matInput placeholder="00201" formControlName="employee">
+        </mat-form-field>
+      </div>
+
+      <!-- Card Number -->
+      <div class="web-timecards-item">
+        <mat-label>Card #:</mat-label>
+        <br>
+        <mat-form-field>
+          <input matInput placeholder="00201" formControlName="cardNumber">
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="web-timecards-container">
+      <!-- Name -->
+      <div class="web-timecards-item">
+        <mat-label>Name:</mat-label>
+        <br>
+        <mat-form-field class="name">
+          <input matInput placeholder="PETERSON, MICHELLE" formControlName="name">
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="web-timecards-container">
+      <!-- Date Range -->
+      <div class="web-timecards-item">
+        <mat-label>Date Range: </mat-label>
+        <br>
+        <mat-form-field>
+          <mat-select formControlName="dateRange" (selectionChange)="dateRangeChanged($event.value)">
+            <mat-option value="Current Pay Period">Current Pay Period</mat-option>
+            <mat-option value="Previous Pay Period">Previous Pay Period</mat-option>
+            <mat-option value="Current Week">Current Week</mat-option>
+            <mat-option value="Last Week">Last Week</mat-option>
+            <mat-option value="Today">Today</mat-option>
+            <mat-option value="Yesterday">Yesterday</mat-option>
+            <mat-option value="Custom Date Range">Custom Date Range</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <!-- Date Range From -->
+      <div class="web-timecards-item">
+        <mat-label>From: </mat-label>
+        <br>
+        <mat-form-field>
+          <input matInput [matDatepicker]="picker1" formControlName="dateRangeFrom">
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
+          <mat-datepicker #picker1></mat-datepicker>
+        </mat-form-field>
+      </div>
+
+      <!-- Date Range To -->
+      <div class="web-timecards-item">
+        <mat-label>To: </mat-label>
+        <br>
+        <mat-form-field>
+          <input matInput [matDatepicker]="picker2" formControlName="dateRangeTo">
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+          <mat-datepicker #picker2></mat-datepicker>
+        </mat-form-field>
+      </div>
+    </div>
+
+
+    <div class="submit-button">
+      <button
+        mat-raised-button
+        type="submit"
+        color="primary">
+        Report
+      </button>
+      <button
+        mat-raised-button
+        type="button"
+        color="primary"
+        (click)="onLogoff()">
+        Logoff
+      </button>
+    </div>
+
+  </form>
+</mat-card>

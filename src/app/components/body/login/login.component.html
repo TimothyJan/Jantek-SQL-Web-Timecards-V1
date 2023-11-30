@@ -1,0 +1,29 @@
+
+<mat-card class="login">
+
+  <form [formGroup]="form" (ngSubmit)="onLogin()">
+    <mat-form-field>
+      <mat-label>Username</mat-label>
+      <input matInput id="Username" formControlName="username">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Password</mat-label>
+      <input matInput id="Password" type="password" formControlName="password">
+    </mat-form-field>
+
+    <br>
+
+    <button
+      mat-raised-button
+      type="submit"
+      color="primary">
+      Login
+    </button>
+
+    <p>Jantek Web Report is a product of JANTEK ELECTRONICS INC.</p>
+  </form>
+
+</mat-card>
+
+
