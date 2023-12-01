@@ -19,13 +19,13 @@ mat-card-title {
   align-items: center; /* align vertical */
 }
 
-@media screen and (min-width: 790px) {
+@media screen and (min-width: 720px) {
   .web-timecards-container {
     display: flex;
     flex-flow: row wrap;
     justify-content: start;
     column-gap: 10px;
-    min-width: 790px;
+    min-width: 720px;
   }
 }
 
